@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <display-name>work_web_1118_1</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>ActionServlet</servlet-name>
+    <servlet-class>com.sjh.core.ActionServlet</servlet-class>
+    <init-param>
+      <param-name>configLocation</param-name>
+      <param-value>/WEB-INF/config.properties</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ActionServlet</servlet-name>
+    <url-pattern>*.jh</url-pattern>
+  </servlet-mapping>
+  
+  <filter>
+  	<filter-name>CharEncode</filter-name>
+  	<filter-class>com.sjh.core.CharEncode</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>CharEncode</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+</web-app>
